@@ -1,0 +1,160 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">{{ "Id" | translate }}</th>
+      <th scope="col">{{ "Title" | translate }}</th>
+      <th scope="col">{{ "Description" | translate }}</th>
+      <th scope="col">{{ "Price" | translate }}</th>
+      <th scope="col">{{ "Discount Percentage" | translate }}</th>
+      <th scope="col">{{ "Rating" | translate }}</th>
+      <th scope="col">{{ "Stock" | translate }}</th>
+      <th scope="col">{{ "Brand" | translate }}</th>
+      <th scope="col">{{ "Category" | translate }}</th>
+      <th scope="col">{{ "Thumbnail" | translate }}</th>
+      <th scope="col">{{ "Image" | translate }}</th>
+      <th scope="col">{{ "Sales Quantity" | translate }}</th>
+      <th>
+        <div class="row mx-auto">
+          <div class="mt-4 flags">
+            <a
+              (click)="setLang('tr')"
+              [ngClass]="{ active: lang == 'tr' }"
+            >
+              <i class="flag-icon flag-icon-tr rounded-circle"></i>
+            </a>
+            <a
+              (click)="setLang('en')"
+
+              [ngClass]="{ active: lang == 'us' }"
+            >
+              <i class="flag-icon flag-icon-us rounded-circle"></i>
+            </a>
+          </div>
+        </div>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let dummy of dummies.products">
+      <td>{{ dummy.id }}</td>
+      <td>{{ dummy.title }}</td>
+      <td>{{ dummy.description }}</td>
+      <td>{{ dummy.price }}</td>
+      <td>{{ dummy.discountPercentage }}</td>
+      <td>{{ dummy.rating }}</td>
+      <td>{{ dummy.stock }}</td>
+      <td>{{ dummy.brand }}</td>
+      <td>{{ dummy.category }}</td>
+      <td>
+        <img src="{{ dummy.thumbnail }} " class="image-height-widht-auto" />
+      </td>
+      <td>
+        <img src="{{ dummy.images[0] }} " class="image-height-widht-auto" />
+      </td>
+      <td class="piece">
+        <label>{{ dummy.piece }}</label>
+        <p
+          class="piece-description text-center text-white m-1 rounded-lg"
+          [ngClass]="{
+            'p-1': dummy.explanation !== undefined && dummy.explanation !== ''
+          }"
+        >
+          {{ dummy.explanation }}
+        </p>
+      </td>
+      <td>
+        <button
+          mat-raised-button
+          class="btn sale-button-color text-light"
+          data-toggle="modal"
+          data-target="#exampleModalLong"
+          (click)="openModal(dummy)"
+        >
+          {{ "Sale" | translate }}
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModalLong"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLongTitle"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">
+          {{ "Sale Item" | translate }}
+        </h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-hover table-striped">
+          <thead>
+            <tr>
+              <th>{{ "Id" | translate }}</th>
+              <th>{{ "Title" | translate }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{ id }}</td>
+              <td>{{ title }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <form class="example-form mt-2">
+          <mat-form-field class="example-full-width w-100" appearance="fill">
+            <mat-label>{{ "Piece" | translate }}</mat-label>
+            <input
+              id="piece"
+              matInput
+              type="number"
+              #piece="ngModel"
+              [(ngModel)]="takenItem.piece"
+              [ngModelOptions]="{ standalone: true }"
+              placeholder="{{ 'Piece' | translate }}"
+              value="0"
+            />
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width w-100" appearance="fill">
+            <mat-label>{{ "Description" | translate }}</mat-label>
+            <textarea
+              id="description"
+              matInput
+              #description="ngModel"
+              [(ngModel)]="takenItem.explanation"
+              [ngModelOptions]="{ standalone: true }"
+              placeholder="{{ 'Description' | translate }}"
+            ></textarea>
+          </mat-form-field>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn save-button-color text-light"
+          data-dismiss="modal"
+          (click)="onSave()"
+        >
+          {{ "Save" | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal End -->

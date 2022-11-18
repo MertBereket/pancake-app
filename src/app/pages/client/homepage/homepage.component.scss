@@ -1,0 +1,34 @@
+.modal-content {
+  width: auto;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+.modal-title {
+  font-size: large;
+  font-weight: bold;
+}
+
+.modal-header {
+  border-bottom: none;
+}
+
+.piece:hover .piece-description {
+  display: block !important;
+}
+
+.piece-description {
+  display: none;
+  background-color: #fd841f;
+}
+.sale-button-color {
+  background-color: #fd841f;
+}
+
+.save-button-color {
+  background-color: #fd841f;
+}
+.image-height-widht-auto {
+  max-width: 100%;
+  height: auto;
+}
