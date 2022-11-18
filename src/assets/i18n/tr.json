@@ -1,0 +1,18 @@
+{
+  "Id": "Id",
+  "Title": "Başlık",
+  "Description": "Açıklama",
+  "Price": "Fiyat",
+  "Discount Percentage": "İndirim Yüzdesi",
+  "Rating": "Rating",
+  "Stock": "Stok",
+  "Brand": "Marka",
+  "Category": "Kategori",
+  "Thumbnail": "Küçük Resim",
+  "Image": "Fotoğraf",
+  "Sales Quantity": "Satış Adedi",
+  "Sale": "Satış",
+  "Piece": "Adet",
+  "Save": "Kaydet",
+  "Sale Item": "Satılan Ürün"
+}

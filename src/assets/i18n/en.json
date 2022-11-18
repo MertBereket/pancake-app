@@ -1,0 +1,18 @@
+{
+  "Id": "Id",
+  "Title": "Title",
+  "Description": "Description",
+  "Price": "Price",
+  "Discount Percentage": "Discount Percentage",
+  "Rating": "Rating",
+  "Stock": "Stock",
+  "Brand": "Brand",
+  "Category": "Category",
+  "Thumbnail": "Thumbnail",
+  "Image": "Image",
+  "Sales Quantity": "Sales Quantity",
+  "Sale": "Sale",
+  "Piece": "Piece",
+  "Save": "Save",
+  "Sale Item": "Sale Item"
+}
